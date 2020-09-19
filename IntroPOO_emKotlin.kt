@@ -6,13 +6,8 @@ fun main(){
     }
     println("Acesso liberado")
 
-    val contaCarol = Conta()
-    contaCarol.titular = "Carol Cortez"
-    contaCarol.numero = 123456
-
-    val contaAna = Conta()
-    contaAna.titular = "Ana Cortez"
-    contaAna.numero = 123487
+    val contaCarol = Conta("Carol Cortez", 123456)
+    val contaAna = Conta("Ana Cortez", 123487)
 
     contaCarol.depositar(500.0)
     contaAna.sacar(50.0)
@@ -20,22 +15,20 @@ fun main(){
     contaAna.confereSaldo()
 }
 
-class Conta {
-    var titular = ""
-    var numero = 0
+class Conta(var titular: String, var numero: Int) {
     var saldo = 0.0 //set e get é um atributo padrão de qualquer propriedade de classe
-        private set //não precisa declarar o saldo como privado nem alterar os getters e setters. O private set garante que só a classe terá acesso a ele
-        /* Se fosse setar o valor, a sintaxe seria:
-        set(valor){
-            if (valor > 0){
-                field = valor // field é como o this.valor
-            }
+        private set //não precisa declarar o saldo como privado nem alterar os getters e setters. O provate set garante que só a classe terá acesso a ele
+    /* Se fosse setar o valor, a sintaxe seria:
+    set(valor){
+        if (valor > 0){
+            field = valor // field é como o this.valor
         }
-        //No Kotlin, o encapsulamento é o comportamento padrão do código
-         */
+    }
+    //No Kotlin, o encapsulamento é o comportamento padrão do código
+     */
 
     fun depositar(valor: Double) {
-        if (valor > 0) { //Faz mais sentido garantir que a única forma de adicionar saldo seja por meio de depósito
+        if (valor > 0) {
             saldo += valor
             println("Operação realizada!")
         } else {
