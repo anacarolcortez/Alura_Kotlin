@@ -29,20 +29,20 @@ class Conta {
 
 
     fun depositar(valor: Double) {
-        this.saldo += valor
+        saldo += valor
         println("Operação realizada!")
-        this.confereSaldo()
+        confereSaldo()
     }
 
     fun sacar(valor: Double) {
-        if (this.saldo >= valor) {
-            this.saldo -= valor
+        if (saldo >= valor) {
+            saldo -= valor
             println("Operação realizada!")
         } else {
             println("Operação negada!")
         }
 
-        this.confereSaldo()
+        confereSaldo()
     }
 
     fun transferir(valor: Double, destino: Conta) {
@@ -58,14 +58,10 @@ class Conta {
 
     fun confereSaldo() {
         when {
-            this.saldo > 0.0 -> println("Saldo positivo em R$ ${this.saldo}. Gostaria de investir?")
-            this.saldo == 0.0 -> println("Saldo zerado")
-            else -> println("Saldo negativo em R$ ${this.saldo}. Gostaria de contratar um empréstimo?")
+            saldo > 0.0 -> println("Saldo positivo em R$ ${saldo}. Gostaria de investir?")
+            saldo == 0.0 -> println("Saldo zerado")
+            else -> println("Saldo negativo em R$ ${saldo}. Gostaria de contratar um empréstimo?")
         }
     }
 
 }
-
-
-
-
