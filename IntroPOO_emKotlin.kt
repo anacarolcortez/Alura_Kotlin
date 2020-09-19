@@ -15,7 +15,9 @@ fun main(){
     contaAna.confereSaldo()
 }
 
-class Conta(var titular: String, var numero: Int) {
+class Conta(val titular: String,
+            val numero: Int
+) {
     var saldo = 0.0 //set e get é um atributo padrão de qualquer propriedade de classe
         private set //não precisa declarar o saldo como privado nem alterar os getters e setters. O provate set garante que só a classe terá acesso a ele
     /* Se fosse setar o valor, a sintaxe seria:
