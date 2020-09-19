@@ -24,7 +24,7 @@ class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0 //set e get é um atributo padrão de qualquer propriedade de classe
-        private set //não precisa declarar o saldo como privado nem alterar os getters e setters. O provate set garante que só a classe terá acesso a ele
+        private set //não precisa declarar o saldo como privado nem alterar os getters e setters. O private set garante que só a classe terá acesso a ele
         /* Se fosse setar o valor, a sintaxe seria:
         set(valor){
             if (valor > 0){
@@ -35,7 +35,7 @@ class Conta {
          */
 
     fun depositar(valor: Double) {
-        if (valor > 0) {
+        if (valor > 0) { //Faz mais sentido garantir que a única forma de adicionar saldo seja por meio de depósito
             saldo += valor
             println("Operação realizada!")
         } else {
