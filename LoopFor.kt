@@ -21,4 +21,11 @@ fun step(num:Int){
   }
 }
 
+fun letters(num:Int){
+  val stringArray = "Da hora"
+  for (s in stringArray){
+    print(s.toUpperCase())
+  }
+}
+
 
