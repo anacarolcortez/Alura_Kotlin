@@ -55,7 +55,7 @@ fun main() {
 fun MutableList<Livro?>.imprimir() {
     val lista =  this.filterNotNull()
         .joinToString (separator = "\n"){
-        livro -> "título: ${livro?.titulo}, autor: ${livro?.autor}, ano: ${livro?.ano}, editora: ${livro.editora ?: "não informada"}"
+        livro -> "título: ${livro.titulo}, autor: ${livro.autor}, ano: ${livro.ano}, editora: ${livro.editora ?: "não informada"}"
     }
     println("####### LIVROS ######")
     println(lista)
